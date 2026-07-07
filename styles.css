@@ -328,6 +328,18 @@ body {
     border-bottom-color: #e67e22;
 }
 
+.staff-card.admin {
+    border-bottom-color: #ff0000;
+}
+
+.staff-card.dev {
+    border-bottom-color: #db7b28;
+}
+
+.staff-card.mod {
+    border-bottom-color: #2ecc71;
+}
+
 .avatar {
     width: 90px;
     height: 90px;
