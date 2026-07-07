@@ -166,10 +166,12 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* Zmienione z 'cover' na 'contain' */
     opacity: 0;
     transition: opacity 1s ease-in-out;
+    background-color: #000; /* Opcjonalnie: czarne tło w miejscach, gdzie zdjęcie nie sięga */
 }
+
 
 .slide.active {
     opacity: 1;
