@@ -1,148 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Poland | Roblox Community</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cloudflare.com">
-</head>
-<body>
-
-    <!-- NAV BAR -->
-    <nav class="navbar">
-        <div class="logo">Project <span>Poland</span></div>
-        <ul class="nav-links">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Project Poland | Roblox Community</title>
+      <link rel="stylesheet" href="styles.css">
+      <link rel="stylesheet" href="https://cloudflare.com">
+   </head>
+   <body>
+      <!-- NAV BAR -->
+      <nav class="navbar">
+         <div class="logo">Project <span>Poland</span></div>
+         <ul class="nav-links">
             <li><a href="#about">About Us</a></li>
             <li><a href="#lookup">Moderation Lookup</a></li>
             <li><a href="#staff">Staff</a></li>
-        </ul>
-    </nav>
-
-    <!-- HERO SECTION -->
-    <header class="hero" id="about">
-        <div class="hero-content">
+         </ul>
+      </nav>
+      <!-- HERO SECTION -->
+      <header class="hero" id="about">
+         <div class="hero-content">
             <h1 style="white-space: nowrap;">Welcome to <span>Project Poland</span></h1>
             <p>Inspired by Polish Car Driving, the game features 6 cars, 1 city, and 3 villages. Earn money by delivering packages or recycling deposit bottles at machines. Report any bugs on our Discord server. Exploiters are banned instantly. Have fun!</p>
-            
             <div class="social-buttons">
-                <a href="https://roblox.com" target="_blank" class="btn btn-roblox">
-                    <i class="fa-solid fa-gamepad"></i> Join Roblox
-                </a>
-                <a href="https://discord.com" target="_blank" class="btn btn-discord">
-                    <i class="fa-brands fa-discord"></i> Discord Server
-                </a>
+               <a href="https://roblox.com" target="_blank" class="btn btn-roblox">
+               <i class="fa-solid fa-gamepad"></i> Join Roblox
+               </a>
+               <a href="https://discord.com" target="_blank" class="btn btn-discord">
+               <i class="fa-brands fa-discord"></i> Discord Server
+               </a>
             </div>
-        </div>
-
-        <div class="slider-container">
+         </div>
+         <div class="slider-container">
             <div class="slider">
-                <img src="https://tr.rbxcdn.com/180DAY-f4800b3aea32a6d02f4faa1f12502c1e/768/432/Image/Webp/noFilter" alt="Roblox Screen 1" class="slide active">
-                <img src="https://tr.rbxcdn.com/180DAY-d2ac755043071def50dac474356712bc/768/432/Image/Png/noFilter" alt="Roblox Screen 2" class="slide">
-                <img src="https://tr.rbxcdn.com/180DAY-30c1a0affb69cdda1e45afe026a036b9/768/432/Image/Webp/noFilter" alt="Roblox Screen 3" class="slide">
+               <img src="https://tr.rbxcdn.com/180DAY-f4800b3aea32a6d02f4faa1f12502c1e/768/432/Image/Webp/noFilter" alt="Roblox Screen 1" class="slide active">
+               <img src="https://tr.rbxcdn.com/180DAY-d2ac755043071def50dac474356712bc/768/432/Image/Png/noFilter" alt="Roblox Screen 2" class="slide">
+               <img src="https://tr.rbxcdn.com/180DAY-30c1a0affb69cdda1e45afe026a036b9/768/432/Image/Webp/noFilter" alt="Roblox Screen 3" class="slide">
             </div>
-        </div>
-    </header>
-
-    <!-- MODERATION LOOKUP SECTION -->
-    <section class="lookup-section" id="lookup">
-        <div class="container">
+         </div>
+      </header>
+      <!-- MODERATION LOOKUP SECTION -->
+      <section class="lookup-section" id="lookup">
+         <div class="container">
             <h2><i class="fa-solid fa-shield-halved"></i> Moderation Lookup</h2>
             <p>Enter the player's nickname to check their ban status in our database.</p>
-            
             <div class="lookup-box">
-                <input type="text" id="usernameInput" placeholder="Enter Roblox username...">
-                <button onclick="checkPlayerBan()"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+               <input type="text" id="usernameInput" placeholder="Enter Roblox username...">
+               <button onclick="checkPlayerBan()"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
             </div>
-            
             <div id="lookupResult" class="result-box hidden">
-                <!-- Wynik pojawi się tutaj po kliknięciu szukaj -->
+               <!-- Wynik pojawi się tutaj po kliknięciu szukaj -->
             </div>
-        </div>
-    </section>
-
-    <!-- STAFF LIST SECTION -->
-    <section class="staff-section" id="staff">
-        <div class="container">
+         </div>
+      </section>
+      <!-- STAFF LIST SECTION -->
+      <section class="staff-section" id="staff">
+         <div class="container">
             <h2><i class="fa-solid fa-users"></i> Staff List</h2>
             <div class="staff-grid">
-                <div class="staff-card owner">
-                    <div class="avatar">
-                        <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-8B95A7403775BA13FF971123B5241CA3-Png/50/50/AvatarHeadshot/Webp/noFilter" alt="Avatar">
-                    </div>
-                    <h3>Kolejowy (@Kolejowy225)</h3>
-                    <span class="role">Owner</span>
-                </div>
-
-                <div class="staff-card head">
-                    <div class="avatar">
-                        <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-47184D768548AD76D13504115623A6A3-Png/50/50/AvatarHeadshot/Webp/noFilter" alt="Avatar">
-                    </div>
-                    <h3>Amexon (@robloxx14725836)</h3>
-                    <span class="role">Head Of Staff</span>
-                </div>
-
-                <div class="staff-card event">
-                    <div class="avatar">
-                        <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-1BAB7A6299F9E6B7F71D6E5EC18ED549-Png/50/50/AvatarHeadshot/Webp/noFilter" alt="Avatar">
-                    </div>
-                    <h3>Matwik (@AlanekXPqqq)</h3>
-                    <span class="role">Event Host</span>
-                </div>
+               <div class="staff-card owner">
+                  <div class="avatar">
+                     <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-8B95A7403775BA13FF971123B5241CA3-Png/50/50/AvatarHeadshot/Webp/noFilter" alt="Avatar">
+                  </div>
+                  <h3>Kolejowy (@Kolejowy225)</h3>
+                  <span class="role">Owner</span>
+               </div>
+               <div class="staff-card head">
+                  <div class="avatar">
+                     <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-47184D768548AD76D13504115623A6A3-Png/50/50/AvatarHeadshot/Webp/noFilter" alt="Avatar">
+                  </div>
+                  <h3>Amexon (@robloxx14725836)</h3>
+                  <span class="role">Head Of Staff</span>
+               </div>
+               <div class="staff-card event">
+                  <div class="avatar">
+                     <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-1BAB7A6299F9E6B7F71D6E5EC18ED549-Png/50/50/AvatarHeadshot/Webp/noFilter" alt="Avatar">
+                  </div>
+                  <h3>Matwik (@AlanekXPqqq)</h3>
+                  <span class="role">Event Host</span>
+               </div>
             </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2024-2026 Project Poland. All rights reserved.</p>
-    </footer>
-
-    <!-- SKRYPT DO KARUZELI I WYSZUKIWARKI BANA -->
-    <script>
-        // Automatyczna karuzela zdjęć
-        const slides = document.querySelectorAll('.slide');
-        let currentSlide = 0;
-
-        setInterval(() => {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }, 4000); // Zmiana zdjęcia co 4 sekundy
-
-        // Prosta symulacja sprawdzania bana (Moderation Lookup)
-        function checkPlayerBan() {
-            const username = document.getElementById('usernameInput').value.trim();
-            const resultBox = document.getElementById('lookupResult');
-            
-            if (username === "") {
-                alert("Please enter a username!");
-                return;
-            }
-
-            resultBox.classList.remove('hidden');
-            
-            // Losowa symulacja dla efektu (w prawdziwej grze wymaga to API)
-            const isBanned = Math.random() < 0.3; // 30% szans na wylosowanie bana w demo
-            
-            if (isBanned) {
-                resultBox.innerHTML = `
-                    <div class="status banned">
-                        <i class="fa-solid fa-circle-xmark"></i>
-                        <strong>${username}</strong> is <span>BANNED</span>.
-                        <p>Reason: Violation of community guidelines.</p>
-                    </div>
-                `;
-            } else {
-                resultBox.innerHTML = `
-                    <div class="status clean">
-                        <i class="fa-solid fa-circle-check"></i>
-                        <strong>${username}</strong> is <span>CLEAN</span>.
-                        <p>No active bans found on this account.</p>
-                    </div>
-                `;
-            }
-        }
-    </script>
-</body>
+         </div>
+      </section>
+      <!-- FOOTER -->
+      <footer>
+         <p>&copy; 2024-2026 Project Poland. All rights reserved.</p>
+      </footer>
+      <!-- SKRYPT DO KARUZELI I WYSZUKIWARKI BANA -->
+      <script>
+         // Automatyczna karuzela zdjęć
+         const slides = document.querySelectorAll('.slide');
+         let currentSlide = 0;
+         
+         setInterval(() => {
+             slides[currentSlide].classList.remove('active');
+             currentSlide = (currentSlide + 1) % slides.length;
+             slides[currentSlide].classList.add('active');
+         }, 4000); // Zmiana zdjęcia co 4 sekundy
+         
+         // Prosta symulacja sprawdzania bana (Moderation Lookup)
+         function checkPlayerBan() {
+             const username = document.getElementById('usernameInput').value.trim();
+             const resultBox = document.getElementById('lookupResult');
+             
+             if (username === "") {
+                 alert("Please enter a username!");
+                 return;
+             }
+         
+             resultBox.classList.remove('hidden');
+             
+             // Losowa symulacja dla efektu (w prawdziwej grze wymaga to API)
+             const isBanned = Math.random() < 0.3; // 30% szans na wylosowanie bana w demo
+             
+             if (isBanned) {
+                 resultBox.innerHTML = `
+                     <div class="status banned">
+                         <i class="fa-solid fa-circle-xmark"></i>
+                         <strong>${username}</strong> is <span>BANNED</span>.
+                         <p>Reason: Violation of community guidelines.</p>
+                     </div>
+                 `;
+             } else {
+                 resultBox.innerHTML = `
+                     <div class="status clean">
+                         <i class="fa-solid fa-circle-check"></i>
+                         <strong>${username}</strong> is <span>CLEAN</span>.
+                         <p>No active bans found on this account.</p>
+                     </div>
+                 `;
+             }
+         }
+      </script>
+   </body>
 </html>
