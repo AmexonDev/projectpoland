@@ -162,7 +162,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: fill; /* Wymusza pełne wymiary 100% x 100% bez obcinania */
-    transform: scale(0.8); /* Pomniejsza całe zdjęcie do skali 0.8 (80%) */
+    transform: scale(1.2); 
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
