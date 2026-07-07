@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,15 +23,15 @@
     <!-- HERO SECTION -->
     <header class="hero" id="about">
         <div class="hero-content">
-            <h1>Witamy w <span>Project Poland</span></h1>
-            <p>Dołącz do najlepszej polskiej społeczności w grze Roblox. Graj, rozmawiaj i twórz historię razem z nami!</p>
+            <h1>Welcome to <span>Project Poland</span></h1>
+            <p>Join the best Polish community on Roblox. Play, chat, and create history together with us!</p>
             
             <div class="social-buttons">
                 <a href="https://roblox.com" target="_blank" class="btn btn-roblox">
-                    <i class="fa-solid fa-gamepad"></i> Dołącz do Roblox
+                    <i class="fa-solid fa-gamepad"></i> Join Roblox
                 </a>
                 <a href="https://discord.com" target="_blank" class="btn btn-discord">
-                    <i class="fa-brands fa-discord"></i> Serwer Discord
+                    <i class="fa-brands fa-discord"></i> Discord Server
                 </a>
             </div>
         </div>
@@ -49,11 +49,11 @@
     <section class="lookup-section" id="lookup">
         <div class="container">
             <h2><i class="fa-solid fa-shield-halved"></i> Moderation Lookup</h2>
-            <p>Enter the player's nickname to check their ban status in our database..</p>
+            <p>Enter the player's nickname to check their ban status in our database.</p>
             
             <div class="lookup-box">
-                <input type="text" id="usernameInput" placeholder="Wpisz nick gracza z Roblox...">
-                <button onclick="checkPlayerBan()"><i class="fa-solid fa-magnifying-glass"></i> Szukaj</button>
+                <input type="text" id="usernameInput" placeholder="Enter Roblox username...">
+                <button onclick="checkPlayerBan()"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
             </div>
             
             <div id="lookupResult" class="result-box hidden">
@@ -69,7 +69,7 @@
             <div class="staff-grid">
                 <div class="staff-card owner">
                     <div class="avatar">
-                        <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-8B95A7403775BA13FF971123B5241CA3-Png/150/150/AvatarHeadshot/Webp/noFilter" alt="Awatar">
+                        <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-8B95A7403775BA13FF971123B5241CA3-Png/150/150/AvatarHeadshot/Webp/noFilter" alt="Avatar">
                     </div>
                     <h3>Kolejowy (@Kolejowy225)</h3>
                     <span class="role">Owner</span>
@@ -92,7 +92,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 Project Poland. Wszelkie prawa zastrzeżone. Strona nie jest powiązana z Roblox Corporation.</p>
+        <p>&copy; 2026 Project Poland. All rights reserved. This site is not affiliated with Roblox Corporation.</p>
     </footer>
 
     <!-- SKRYPT DO KARUZELI I WYSZUKIWARKI BANA -->
@@ -113,7 +113,7 @@
             const resultBox = document.getElementById('lookupResult');
             
             if (username === "") {
-                alert("Proszę wpisać nick gracza!");
+                alert("Please enter a username!");
                 return;
             }
 
@@ -126,16 +126,16 @@
                 resultBox.innerHTML = `
                     <div class="status banned">
                         <i class="fa-solid fa-circle-xmark"></i>
-                        <strong>${username}</strong> jest <span>ZABANOWANY</span>.
-                        <p>Powód: Złamanie regulaminu społeczności.</p>
+                        <strong>${username}</strong> is <span>BANNED</span>.
+                        <p>Reason: Violation of community guidelines.</p>
                     </div>
                 `;
             } else {
                 resultBox.innerHTML = `
                     <div class="status clean">
                         <i class="fa-solid fa-circle-check"></i>
-                        <strong>${username}</strong> jest <span>CZYSTY</span>.
-                        <p>Brak aktywnych blokad na tym koncie.</p>
+                        <strong>${username}</strong> is <span>CLEAN</span>.
+                        <p>No active bans found on this account.</p>
                     </div>
                 `;
             }
