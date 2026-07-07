@@ -142,35 +142,38 @@ body {
     box-shadow: 0 4px 15px rgba(88, 101, 242, 0.3);
 }
 
-/* KONTENER KARUZELI */
-/* 1. ZWIĘKSZAMY SAM KONTENER, ŻEBY ZDJĘCIE MIAŁO MIEJSCE */
+/* ==========================================================================
+   KONTENER KARUZELI I ZDJĘCIA (SLIDER)
+   ========================================================================== */
+
+/* 1. Kontener główny karuzeli - wymiary i ramka */
 .slider-container {
-    flex: 1; /* Pozwalamy mu znowu urosnąć w sekcji Hero */
+    flex: 1;
     width: 100%;
-    max-width: 600px; /* Zwiększone z 450px, aby strona nie blokowała obrazu */
-    height: 380px; /* Zwiększone z 280px */
+    max-width: 600px;
+    height: 380px;
     position: relative;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
     border: 3px solid rgba(255, 255, 255, 0.05);
 }
 
-/* 2. BAZOWY STYL DLA ZDJĘĆ */
+/* 2. Domyślny stan każdego zdjęcia (schowane) */
 .slide {
     position: absolute;
     width: 100%;
     height: 100%;
-    object-fit: fill; /* Wymusza 100% x 100% */
+    object-fit: fill; /* Wymusza pełne wymiary zdjęcia bez ucinania krawędzi */
     opacity: 0;
-    transform: scale(1.0); /* Domyślna, normalna skala */
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Płynne przejście skali */
+    transform: scale(1.0);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
-/* 3. EFEKT SKALI TYLKO DLA AKTYWNEGO (WIDOCZNEGO) ZDJĘCIA */
+/* 3. Efekt powiększenia i wyświetlenia dla aktualnego zdjęcia */
 .slide.active {
     opacity: 1;
-    transform: scale(1.15); /* Tutaj sterujesz wielkością! 1.15 to powiększenie o 15% */
+    transform: scale(1.15); /* Skala 1.15 (powiększenie o 15%) */
 }
 
 
