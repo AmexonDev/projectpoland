@@ -110,6 +110,10 @@
       </footer>
       <!-- SKRYPT DO KARUZELI I WYSZUKIWARKI BANA -->
       <script>
+         function scrollStaff(direction) {
+            const staff = document.getElementById("staffGrid");
+            staff.scrollLeft += direction * 300;
+         }
          // Automatyczna karuzela zdjęć
          const slides = document.querySelectorAll('.slide');
          let currentSlide = 0;
