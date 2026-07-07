@@ -321,11 +321,11 @@ body {
 }
 
 
-.staff-card.owner { border-bottom-color: #f1c40f; }
-.staff-card.owner .avatar i { color: #f1c40f; }
+.staff-card.owner { border-bottom-color: #3498db; }
+.staff-card.owner .avatar i { color: #3498db; }
 
-.staff-card.admin { border-bottom-color: var(--accent-color); }
-.staff-card.admin .avatar i { color: var(--accent-color); }
+.staff-card.head { border-bottom-color: #206694; }
+.staff-card.head .avatar i { color: #206694; }
 
 .staff-card.mod { border-bottom-color: #3498db; }
 .staff-card.mod .avatar i { color: #3498db; }
