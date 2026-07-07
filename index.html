@@ -167,39 +167,75 @@
              slides[currentSlide].classList.add('active');
          }, 4000); // Zmiana zdjęcia co 4 sekundy
          
-         // Prosta symulacja sprawdzania bana (Moderation Lookup)
-         function checkPlayerBan() {
-             const username = document.getElementById('usernameInput').value.trim();
-             const resultBox = document.getElementById('lookupResult');
-             
-             if (username === "") {
-                 alert("Please enter a username!");
-                 return;
-             }
+         async function checkPlayerBan() {
+
+    const username = document.getElementById("usernameInput").value.trim();
+    const resultBox = document.getElementById("lookupResult");
+
+    if (username === "") {
+        alert("Please enter a username!");
+        return;
+    }
+
+    try {
+
+        const response = await fetch("bans.json");
+        const bans = await response.json();
+
+        const player = bans.find(
+            ban => ban.username.toLowerCase() === username.toLowerCase()
+        );
+
+        resultBox.classList.remove("hidden");
+
+        if (player) {
+
+            resultBox.innerHTML = `
+                <div class="status banned">
+
+                    <i class="fa-solid fa-circle-xmark"></i>
+
+                    <strong>${player.username}</strong>
+                    is <span>BANNED</span>
+
+                    <p>
+                        Reason: ${player.Reason}<br>
+                        Issued: ${player.Issued}<br>
+                        Expires: ${player.Expires}
+                    </p>
+
+                </div>
+            `;
+
+        } else {
+
+            resultBox.innerHTML = `
+                <div class="status clean">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <strong>${username}</strong>
+                    is <span>CLEAN</span>
+
+                    <p>
+                        No active bans found.
+                    </p>
+
+                </div>
+            `;
+
+        }
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert("Cannot load ban database!");
+
+    }
+
+}
          
-             resultBox.classList.remove('hidden');
-             
-             // Losowa symulacja dla efektu (w prawdziwej grze wymaga to API)
-             const isBanned = Math.random() < 0.3; // 30% szans na wylosowanie bana w demo
-             
-             if (isBanned) {
-                 resultBox.innerHTML = `
-                     <div class="status banned">
-                         <i class="fa-solid fa-circle-xmark"></i>
-                         <strong>${username}</strong> is <span>BANNED</span>.
-                         <p>Reason: Violation of community guidelines.</p>
-                     </div>
-                 `;
-             } else {
-                 resultBox.innerHTML = `
-                     <div class="status clean">
-                         <i class="fa-solid fa-circle-check"></i>
-                         <strong>${username}</strong> is <span>CLEAN</span>.
-                         <p>No active bans found on this account.</p>
-                     </div>
-                 `;
-             }
-         }
       </script>
    </body>
 </html>
