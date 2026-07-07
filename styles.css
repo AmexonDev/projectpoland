@@ -142,16 +142,20 @@ body {
     box-shadow: 0 4px 15px rgba(88, 101, 242, 0.3);
 }
 
-/* KARUZELA (SLIDER) */
+/* KARUZELA (SLIDER) - ZMNIEJSZONE WYMIARY */
 .slider-container {
-    flex: 1;
-    height: 400px;
+    flex: initial; /* Zmienione z 1, aby kontener nie rozpychał się na siłę */
+    width: 100%;
+    max-width: 450px; /* Maksymalna szerokość mniejszego zdjęcia */
+    height: 280px; /* Zmniejszona wysokość z 400px */
     position: relative;
-    border-radius: 16px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
     border: 3px solid rgba(255, 255, 255, 0.05);
+    margin: 0 auto; /* Centruje karuzelę, jeśli tekst nad nią się zawinie */
 }
+
 
 .slider {
     width: 100%;
