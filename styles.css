@@ -298,13 +298,20 @@ body {
 
 .staff-grid {
     display: flex;
-    justify-content: center;
     gap: 30px;
-    flex-wrap: wrap;
+    overflow-x: auto;
+    padding: 20px;
+    scroll-behavior: smooth;
+    justify-content: flex-start;
+    scrollbar-width: none;
+}
+
+.staff-grid::-webkit-scrollbar {
+    display: none;
 }
 
 .staff-card {
-    width: 260px;
+    flex: 0 0 260px;
     background: var(--bg-card);
     border-radius: 15px;
     padding: 35px 25px;
