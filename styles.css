@@ -143,33 +143,36 @@ body {
 }
 
 /* KONTENER KARUZELI */
+/* 1. ZWIĘKSZAMY SAM KONTENER, ŻEBY ZDJĘCIE MIAŁO MIEJSCE */
 .slider-container {
-    flex: initial;
+    flex: 1; /* Pozwalamy mu znowu urosnąć w sekcji Hero */
     width: 100%;
-    max-width: 450px;
-    height: 280px;
+    max-width: 600px; /* Zwiększone z 450px, aby strona nie blokowała obrazu */
+    height: 380px; /* Zwiększone z 280px */
     position: relative;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 8px 25px rgba(0,0,0,0.5);
     border: 3px solid rgba(255, 255, 255, 0.05);
-    margin: 0 auto;
 }
 
-/* CAŁE ZDJĘCIE 100% x 100% POMNIEJSZONE DO SKALI 0.8 */
+/* 2. BAZOWY STYL DLA ZDJĘĆ */
 .slide {
     position: absolute;
     width: 100%;
     height: 100%;
-    object-fit: fill; /* Wymusza pełne wymiary 100% x 100% bez obcinania */
-    transform: scale(1.2); 
+    object-fit: fill; /* Wymusza 100% x 100% */
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transform: scale(1.0); /* Domyślna, normalna skala */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Płynne przejście skali */
 }
 
+/* 3. EFEKT SKALI TYLKO DLA AKTYWNEGO (WIDOCZNEGO) ZDJĘCIA */
 .slide.active {
     opacity: 1;
+    transform: scale(1.15); /* Tutaj sterujesz wielkością! 1.15 to powiększenie o 15% */
 }
+
 
 /* MODERATION LOOKUP */
 .lookup-section {
