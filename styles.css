@@ -287,27 +287,39 @@ body {
     text-align: center;
 }
 
-.staff-section h2 {
-    font-size: 34px;
-    margin-bottom: 40px;
+.staff-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: 1200px;
+    margin: auto;
 }
 
-.staff-section h2 i {
-    color: var(--accent-color);
+.staff-btn {
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: var(--accent-color);
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+    flex-shrink: 0;
+}
+
+.staff-btn:hover {
+    transform: scale(1.1);
 }
 
 .staff-grid {
     display: flex;
     gap: 30px;
-    overflow-x: auto;
+    overflow-x: hidden;
     padding: 20px;
     scroll-behavior: smooth;
-    justify-content: flex-start;
-    scrollbar-width: none;
-}
-
-.staff-grid::-webkit-scrollbar {
-    display: none;
+    flex: 1;
 }
 
 .staff-card {
