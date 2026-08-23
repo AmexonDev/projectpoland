@@ -1,14 +1,340 @@
 <!DOCTYPE html>
-<html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Project Poland | Roblox Community</title>
-      <link rel="stylesheet" href="styles.css">
-      <link rel="stylesheet" href="https://cloudflare.com">
-      <link rel="icon" type="image/png" href="https://tr.rbxcdn.com/180DAY-b4de927fdbf515efce878c02efad6dc4/64/64/Image/Webp/noFilter">
-   </head>
-   <body>
-      <h3>We are hissing something special, please wait calmly</h3>
-   </body>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Project Poland | Roblox Community</title>
+    <meta name="description" content="Project Poland — przygotowujemy przewodnik po najciekawszych miastach i miejscach w Polsce. Wkrótce więcej informacji.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:site_name" content="Project Poland">
+    <meta property="og:title" content="Strona w budowie">
+    <meta property="og:description" content="Project Poland Wkrótce więcej informacji.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+        <style>
+        :root {
+            --red: #E3000F;
+            --red-dark: #A0000A;
+            --red-glow: rgba(227, 0, 15, 0.25);
+            --bg: #0A0A0A;
+            --surface: #111111;
+            --surface2: #161616;
+            --border: rgba(255,255,255,0.07);
+            --text: #F0EDE8;
+            --muted: rgba(240, 237, 232, 0.4);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html, body {
+            min-height: 100vh;
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+            opacity: 0.035;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        .grid-bg {
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+        }
+
+        .topbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            z-index: 10;
+            background: rgba(10,10,10,0.8);
+            backdrop-filter: blur(8px);
+        }
+
+        .logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.4rem;
+            letter-spacing: 0.15em;
+            color: var(--text);
+        }
+
+        .logo span { color: var(--red); }
+
+        .corner-tag {
+            position: fixed;
+            bottom: 24px; right: 32px;
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.15);
+            z-index: 10;
+        }
+
+        .side-text {
+            position: fixed;
+            left: 32px;
+            top: 50%;
+            transform: translateY(-50%) rotate(-90deg);
+            font-size: 0.62rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.12);
+            white-space: nowrap;
+        }
+
+        .status-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--red);
+            animation: blink 1.5s ease-in-out infinite;
+        }
+
+        .animate { opacity: 0; animation: fadeUp 0.6s ease forwards; }
+        .d1 { animation-delay: 0.1s; }
+        .d2 { animation-delay: 0.2s; }
+        .d3 { animation-delay: 0.3s; }
+        .d4 { animation-delay: 0.4s; }
+        .d5 { animation-delay: 0.5s; }
+        .d6 { animation-delay: 0.6s; }
+
+        .nav-links { display: flex; gap: 24px; align-items: center; }
+        .nav-link { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1px; background: var(--red); transition: width 0.2s; }
+        .nav-link:hover { color: var(--text); }
+        .nav-link:hover::after, .nav-link--active::after { width: 100%; }
+        .nav-link--active { color: var(--text); }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeDown {
+            from { opacity: 0; transform: translateY(-12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.2; }
+        }
+    </style>
+    <style>
+    body::after {
+        content: '';
+        position: fixed;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, var(--red-glow) 0%, transparent 70%);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        animation: pulse 4s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+        50% { transform: translate(-50%, -50%) scale(1.15); opacity: 0.7; }
+    }
+
+    .topbar {
+        background: none;
+        backdrop-filter: none;
+        opacity: 0;
+        animation: fadeDown 0.8s ease 0.2s forwards;
+    }
+
+    .corner-tag {
+        opacity: 0;
+        animation: fadeUp 0.6s ease 1.3s forwards;
+    }
+
+    .side-text {
+        opacity: 0;
+        animation: fadeIn 0.8s ease 1.4s forwards;
+    }
+
+    main {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+        padding-top: 120px;
+        padding-bottom: 80px;
+    }
+
+    .content {
+        text-align: center;
+        max-width: 700px;
+        padding: 40px;
+    }
+
+    .eyebrow {
+        font-size: 0.72rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--red);
+        margin-bottom: 28px;
+        opacity: 0;
+        animation: fadeUp 0.7s ease 0.4s forwards;
+    }
+
+    .headline {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: clamp(4.5rem, 12vw, 9rem);
+        line-height: 0.92;
+        letter-spacing: 0.02em;
+        color: var(--text);
+        margin-bottom: 36px;
+        opacity: 0;
+        animation: fadeUp 0.7s ease 0.55s forwards;
+    }
+
+    .headline em {
+        font-style: normal;
+        color: var(--red);
+        display: block;
+    }
+
+    .divider {
+        width: 48px;
+        height: 2px;
+        background: var(--red);
+        margin: 0 auto 32px;
+        opacity: 0;
+        animation: expandWidth 0.6s ease 0.75s forwards;
+        transform-origin: center;
+    }
+
+    .description {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: var(--muted);
+        font-weight: 300;
+        max-width: 440px;
+        margin: 0 auto 48px;
+        opacity: 0;
+        animation: fadeUp 0.7s ease 0.85s forwards;
+    }
+
+    .progress-wrap {
+        margin-bottom: 48px;
+        opacity: 0;
+        animation: fadeUp 0.7s ease 1s forwards;
+    }
+
+    .progress-label {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.7rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 10px;
+    }
+
+    .progress-track {
+        height: 2px;
+        background: var(--border);
+        border-radius: 2px;
+        overflow: hidden;
+    }
+
+    .progress-fill {
+        height: 100%;
+        width: 0%;
+        background: var(--red);
+        border-radius: 2px;
+        animation: fillBar 2s cubic-bezier(0.25, 1, 0.5, 1) 1.2s forwards;
+        box-shadow: 0 0 12px var(--red-glow);
+    }
+
+    @keyframes expandWidth {
+        from { opacity: 0; transform: scaleX(0); }
+        to { opacity: 1; transform: scaleX(1); }
+    }
+
+    @keyframes fillBar {
+        to { width: 10%; }
+    }
+</style>
+</head>
+<body>
+
+    <div class="grid-bg"></div>
+
+    <nav class="topbar">
+        <div class="logo">PROJECT<span>POLAND</span></div>
+            <div class="status-badge">
+        <div class="status-dot"></div>
+        Aktywny projekt
+    </div>
+    </nav>
+
+        <div class="side-text">Wracamy wkrótce — bądź na bieżąco</div>
+
+    <main>
+    <div class="content">
+        <p class="eyebrow">Coś wyjątkowego nadchodzi</p>
+        <h1 class="headline">
+            Strona jest<br>
+            <em>w budowie</em>
+        </h1>
+        <div class="divider"></div>
+        <p class="description">
+            Pracujemy intensywnie nad nową odsłoną witryny.
+            Wróć wkrótce — warto czekać.
+        </p>
+        <div class="progress-wrap">
+            <div class="progress-label">
+                <span>Postęp prac</span>
+                <span>10%</span>
+            </div>
+            <div class="progress-track">
+                <div class="progress-fill"></div>
+            </div>
+        </div>
+        
+    </div>
+</main>
+
+    <div class="corner-tag">© 2026 Project Poland</div>
+</body>
 </html>
